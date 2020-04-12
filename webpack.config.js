@@ -8,7 +8,9 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        main: './src/index.js'
+      main: './src/index.js',
+      about: './src/about/index.js',
+      analytics: './src/analytics/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -26,7 +28,7 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                    'css-loader', 
+                    'css-loader',
                     'postcss-loader'
                 ]
             },
@@ -46,7 +48,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [ 
+    plugins: [
         new webpack.DefinePlugin({
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
@@ -65,6 +67,16 @@ module.exports = {
             inject: false,
             template: './src/index.html',
             filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+          inject: false,
+          template: './src/analytics.html',
+          filename: 'analytics.html'
+        }),
+        new HtmlWebpackPlugin({
+          inject: false,
+          template: './src/about.html',
+          filename: 'about.html'
         }),
         new WebpackMd5Hash()
     ]

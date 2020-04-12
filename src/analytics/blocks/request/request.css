@@ -1,0 +1,62 @@
+.request {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 104px;
+}
+
+.request__links {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 133%;
+    color: rgb(155, 156, 156);
+    display: flex;
+    margin: 40px 0 80px;
+}
+
+.request__link {
+    text-decoration: none;
+    color: #1A1B22;
+}
+.request__page {
+    margin-left: 5px;
+}
+.request__title {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 115%;
+    color: #1A1B22;
+    margin-bottom: 24px;
+}
+
+.request__news {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 133%;
+    color: #1A1B22;
+    margin-bottom: 4px;
+}
+
+.request__mentions {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 133%;
+    color: #1A1B22;
+    margin-bottom: 80px;
+}
+
+.request__number_bold {
+    font-family: Roboto;
+    font-style: bold;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 133%;
+}
