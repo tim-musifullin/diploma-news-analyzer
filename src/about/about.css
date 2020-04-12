@@ -1,6 +1,6 @@
 @import url('../fonts/roboto.css');
 @import url('../normalize.css');
-@import url('../flickity.css');
+@import url('./blocks/flickity/flickity.css');
 
 @import url('./blocks/customers/customers.css');
 @import url('./blocks/history/history.css');
