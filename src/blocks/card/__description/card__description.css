@@ -1,15 +1,16 @@
 .card__description {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 137%;
-    color: #1A1B22;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 137%;
+  color: #1a1b22;
+  overflow: hidden;
 }
 
 @media (max-width: 990px) {
-    .card__description {
-        height: 88px;
-        overflow: hidden;
-    }
+  .card__description {
+    height: 88px;
+    overflow: hidden;
+  }
 }
