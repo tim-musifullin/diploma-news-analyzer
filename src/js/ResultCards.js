@@ -15,7 +15,8 @@ export class ResultCards {
         this.formateDate.formate(data.articles[i].publishedAt),
         data.articles[i].title,
         data.articles[i].description,
-        data.articles[i].source.name
+        data.articles[i].source.name,
+        data.articles[i].url
       );
       this.container.insertAdjacentHTML("beforeend", template);
     }

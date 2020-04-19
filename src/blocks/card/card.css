@@ -13,6 +13,9 @@
   border-radius: 20px;
   position: relative;
   transition: transform 0.4s;
+  text-decoration: none;
+  max-height: 576px;
+  height: 100%;
 }
 
 .card:hover {

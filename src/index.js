@@ -20,11 +20,8 @@ document.addEventListener("click", function () {
 const api = "636f55c68e584f72b302fe4050ffb444";
 let today = new Date();
 let weekAgo = new Date();
-weekAgo.setDate(today.getDate() - 7);
-console.log();
-const pageSize = 20;
 const url = `https://newsapi.org/v2/everything?`;
-// q=${words}&from=${weekAgo}&to=${today}&pageSize=20&language=ru&apiKey=${api}
+
 const resultsSeaction = document.querySelector(".results");
 const resultsCard = document.querySelector(".results__cards");
 const notFound = document.querySelector(".not-found");
@@ -44,17 +41,16 @@ const resultCards = new ResultCards(
   SUM_CARDS_AT_TIME
 );
 
-const mainApi = new Api(url, today, weekAgo, api);
+const mainApi = new Api(url, api);
 const searchForm = document.forms.field;
 
+const sumLoadCards = document.querySelector(".results__cards").children.length;
+
 searchForm.addEventListener("submit", (event) => {
-  const sumLoadCards = document.querySelector(".results__cards").children
-    .length;
   resultsCard.innerHTML = "";
   vision.hidden(notFound);
   vision.hidden(serverError);
   event.preventDefault();
-  localStorage.clear();
   vision.hidden(resultsSeaction);
   vision.visible(preloader);
   const searchWord = event.target.querySelector("#search").value;
@@ -70,6 +66,8 @@ searchForm.addEventListener("submit", (event) => {
         vision.hidden(preloader);
         vision.visible(resultsSeaction);
         vision.hidden(notFound);
+        localStorage.setItem("searchWord", JSON.stringify(searchWord));
+        localStorage.setItem("totalResults", JSON.stringify(data.totalResults));
         localStorage.setItem("news", JSON.stringify(data));
         resultCards.render(localStorage.getItem("news"), sumLoadCards);
       }
@@ -92,3 +90,10 @@ moreNews.addEventListener("click", () => {
   }
   resultCards.render(localStorage.getItem("news"), sumLoadCards);
 });
+
+window.onload = () => {
+  if (localStorage.getItem("news") !== null) {
+    vision.visible(resultsSeaction);
+    resultCards.render(localStorage.getItem("news"), sumLoadCards);
+  }
+};

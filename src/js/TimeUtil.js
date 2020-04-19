@@ -1,6 +1,6 @@
 export class TimeUtil {
-  constructor(date) {
-    this.date = date;
+  constructor() {
+    this.date = new Date();
   }
 
   formate(date) {
@@ -47,5 +47,19 @@ export class TimeUtil {
     }
     cardDate.push(arrDate[0], arrDate[2]);
     return `${cardDate[2]} ${cardDate[0]} ${cardDate[1]}`;
+  }
+
+  apiFormateTo() {
+    const today = 
+    this.date.getFullYear() + "-" + (parseInt(this.date.getMonth() + 1) < 10 ? "0" + 
+    parseInt(this.date.getMonth() + 1) : parseInt(this.date.getMonth() + 1)) + "-" + this.date.getDate();
+    return today;
+  }
+
+  apiFormateFrom() {
+    const week = new Date();
+    week.setDate(week.getDate() - 7);
+    const weekAgo = week.getFullYear() + "-" + (parseInt(week.getMonth() + 1) < 10 ? "0" + parseInt(week.getMonth() + 1) : parseInt(week.getMonth() + 1)) + "-" + week.getDate();
+    return weekAgo;
   }
 }

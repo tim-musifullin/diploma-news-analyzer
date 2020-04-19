@@ -1,9 +1,9 @@
 export class Card {
-  createCard(image, date, title, description, source) {
+  createCard(image, date, title, description, source, url) {
     if (image === null)
       image =
         "https://image.freepik.com/free-vector/blue-breaking-news-tv-background_1017-14201.jpg";
-    const template = `<div class="card">
+    const template = `<a href="${url}" target="_blank" class="card">
                 <img src="${image}" alt="Обложка карточки" class="card__image">
                 <p class="card__date">${date}</p>
                 <div class="card__content">
@@ -11,7 +11,7 @@ export class Card {
                     <p class="card__description">${description}</p>
                 </div>
                 <p class="card__source">${source}</p>
-            </div>`;
+            </a>`;
     return template;
   }
 }
