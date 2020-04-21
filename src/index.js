@@ -47,7 +47,7 @@ const searchForm = document.forms.field;
 const sumLoadCards = document.querySelector(".results__cards").children.length;
 
 searchForm.addEventListener("submit", (event) => {
-  resultsCard.innerHTML = "";
+  resultsCard.textContent = "";
   vision.hidden(notFound);
   vision.hidden(serverError);
   event.preventDefault();
