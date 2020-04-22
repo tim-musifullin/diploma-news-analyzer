@@ -1,9 +1,12 @@
+import { TimeUtil } from "../TimeUtil"
+
 export class CommitCard {
   constructor(container) {
     this.container = container;
+    this.formateDate = new TimeUtil();
   }
 
-  createCard(date, avatar, name, email, commit) {
+  createCard(date, name, email, commit) {
     const sliderCell = document.createElement('div');
     const sliderDate = document.createElement('p');
     const sliderInfo = document.createElement('div');
@@ -31,8 +34,8 @@ export class CommitCard {
     sliderPerson.appendChild(sliderEmail);
     sliderCell.appendChild(sliderComments);
 
-    sliderDate.textContent = date;
-    sliderAvatar.src = avatar;
+    sliderDate.textContent = this.formateDate.formate(date);
+    sliderAvatar.src = "https://i.ibb.co/2NW6MZM/photo-2020-02-24-17-15-34.jpg";
     sliderName.textContent = name;
     sliderEmail.textContent = email;
     sliderComments.textContent = commit;
