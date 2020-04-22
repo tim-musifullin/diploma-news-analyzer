@@ -6,7 +6,7 @@ export class GitHubApi {
   async getCommits() {
     try {
       const res = await fetch(
-        "https://api.github.com/repos/tim-musifullin/diploma-news-analyzer/commits",
+        "https://api.github.com/repos/tim-musifullin/diploma-news-analyzer/commits/branch/level-2",
         {
           method: "GET",
         }
