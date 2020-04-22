@@ -1,13 +1,12 @@
-export class Api {
-  constructor(apiUrl, date) {
+export class GitHubApi {
+  constructor(apiUrl) {
     this.apiUrl = apiUrl;
-    this.date = date;
   }
 
-  async getNews(words) {
+  async getCommits() {
     try {
       const res = await fetch(
-        `${this.apiUrl.url}q=${words}&from=${this.date.apiFormateFrom()}&to=${this.date.apiFormateTo()}&pageSize=100&sortBy=publishedAt&language=ru&apiKey=${this.apiUrl.api}`,
+        "https://api.github.com/repos/tim-musifullin/diploma-news-analyzer/commits",
         {
           method: "GET",
         }

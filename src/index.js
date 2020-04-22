@@ -7,8 +7,9 @@ import { Card } from "./js/Card";
 import { ResultCards } from "./js/ResultCards";
 import { TimeUtil } from "./js/TimeUtil";
 import { Vision } from "./js/Vision";
+import { Reset } from "./js/Reset"
 
-let field = document.querySelector(".search__field");
+const field = document.querySelector(".search__field");
 document.addEventListener("click", function () {
   if (event.target.classList.value === "search__input") {
     field.classList.add("search__field_active");
@@ -17,10 +18,6 @@ document.addEventListener("click", function () {
   }
 });
 
-const api = "636f55c68e584f72b302fe4050ffb444";
-let today = new Date();
-let weekAgo = new Date();
-const url = `https://newsapi.org/v2/everything?`;
 
 const resultsSeaction = document.querySelector(".results");
 const resultsCard = document.querySelector(".results__cards");
@@ -28,31 +25,37 @@ const notFound = document.querySelector(".not-found");
 const preloader = document.querySelector(".preloader");
 const moreNews = document.querySelector(".results__button");
 const serverError = document.querySelector(".error-server");
-
+const searchForm = document.forms.field;
+const sumLoadCards = document.querySelector(".results__cards").children.length;
+const apiUrl = {
+  "api": "636f55c68e584f72b302fe4050ffb444",
+  "url": "https://newsapi.org/v2/everything?"
+}
 const SUM_CARDS_AT_TIME = 3;
+
 
 const vision = new Vision();
 const card = new Card();
-const formateDate = new TimeUtil();
+const date = new TimeUtil();
 const resultCards = new ResultCards(
   resultsCard,
   card,
-  formateDate,
+  date,
   SUM_CARDS_AT_TIME
 );
+const reset = new Reset(
+  notFound,
+  serverError,
+  resultsSeaction,
+  preloader,
+  resultsCard,
+  vision);
+const mainApi = new Api(apiUrl, date);
 
-const mainApi = new Api(url, api);
-const searchForm = document.forms.field;
-
-const sumLoadCards = document.querySelector(".results__cards").children.length;
 
 searchForm.addEventListener("submit", (event) => {
-  resultsCard.textContent = "";
-  vision.hidden(notFound);
-  vision.hidden(serverError);
   event.preventDefault();
-  vision.hidden(resultsSeaction);
-  vision.visible(preloader);
+  reset.clear();
   const searchWord = event.target.querySelector("#search").value;
   mainApi
     .getNews(searchWord)

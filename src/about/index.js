@@ -3,40 +3,18 @@ import '../blocks/header/header.css';
 import '../blocks/footer/footer.css';
 import '../blocks/about/about.css';
 
-function carouselFlkty() {
-  let flkty;
-  if (window.matchMedia("(max-width: 990px").matches) {
-      flkty = new Flickity( '.main-carousel', {
-          cellAlign: 'left',
-          contain: true,
-          wrapAround: true,
-          groupCells: '80%',
-          setGallerySize: false,
-          freeScroll: true,
-          arrowShape: {
-              x0: 30,
-              x1: 55, y1: 25,
-              x2: 60, y2: 20,
-              x3: 40
-          }
-      });
-  } else {
-      flkty = new Flickity( '.main-carousel', {
-          cellAlign: 'center',
-          contain: true,
-          wrapAround: true,
-          groupCells: '80%',
-          setGallerySize: false,
-          freeScroll: true,
-          arrowShape: {
-              x0: 30,
-              x1: 55, y1: 25,
-              x2: 60, y2: 20,
-              x3: 40
-          }
-      });
-  }
-}
+import { GitHubApi } from "./../js/modules/GitHubApi";
+import { CommitCard } from "./../js/components/CommitCards";
+import { CommitCardList } from "./../js/components/CommitCardList";
+import { TimeUtil } from "../js/TimeUtil"
 
-carouselFlkty();
-window.addEventListener('resize', () => carouselFlkty());
+const date = new TimeUtil();
+const container = document.querySelector(".main-carousel");
+const card = new CommitCard(container);
+window.addEventListener('resize', () => card.flickity());
+const cardList = new CommitCardList(card, date);
+
+const gitHubApi = new GitHubApi();
+gitHubApi.getCommits().then((data) => {
+  cardList.renderCommits(data);
+}).catch((error) => console.error(error));
