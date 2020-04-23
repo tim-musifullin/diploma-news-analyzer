@@ -6,7 +6,7 @@ export class CommitCard {
     this.formateDate = new TimeUtil();
   }
 
-  createCard(date, name, email, commit) {
+  createCard(date, avatar, name, email, commit) {
     const sliderCell = document.createElement('div');
     const sliderDate = document.createElement('p');
     const sliderInfo = document.createElement('div');
@@ -35,7 +35,7 @@ export class CommitCard {
     sliderCell.appendChild(sliderComments);
 
     sliderDate.textContent = this.formateDate.formate(date);
-    sliderAvatar.src = "https://i.ibb.co/2NW6MZM/photo-2020-02-24-17-15-34.jpg";
+    sliderAvatar.src = avatar;
     sliderName.textContent = name;
     sliderEmail.textContent = email;
     sliderComments.textContent = commit;
@@ -76,3 +76,6 @@ export class CommitCard {
     }
   }
 }
+
+
+// "https://i.ibb.co/2NW6MZM/photo-2020-02-24-17-15-34.jpg"
