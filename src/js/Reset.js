@@ -15,4 +15,23 @@ export class Reset {
       this.vision.hidden(this.resultsSeaction);
       this.vision.visible(this.preloader);
     }
+    notInput() {
+      this.vision.hidden(this.preloader);
+    }
+
+    dataEmpty() {
+      this.vision.hidden(this.resultsSeaction);
+      this.vision.hidden(this.preloader);
+      this.vision.visible(this.notFound);
+    }
+
+    dataComplete() {
+      this.vision.hidden(this.preloader);
+      this.vision.visible(this.resultsSeaction);
+      this.vision.hidden(this.notFound);
+    }
+    dataError() {
+      this.vision.hidden(this.preloader);
+      this.vision.visible(this.serverError);
+    }
 }

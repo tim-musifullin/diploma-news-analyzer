@@ -1,6 +1,8 @@
 export class TimeUtil {
-  constructor() {
-    this.date = new Date();
+  constructor(date, weekBack) {
+    // this.date = new Date();
+    this.date = date;
+    this.weekBack = weekBack;
   }
 
   formate(date) {
@@ -50,14 +52,15 @@ export class TimeUtil {
   }
 
   apiFormateTo() {
-    const today = 
-    this.date.getFullYear() + "-" + (parseInt(this.date.getMonth() + 1) < 10 ? "0" + 
+    const today =
+    this.date.getFullYear() + "-" + (parseInt(this.date.getMonth() + 1) < 10 ? "0" +
     parseInt(this.date.getMonth() + 1) : parseInt(this.date.getMonth() + 1)) + "-" + this.date.getDate();
+    console.log(today);
     return today;
   }
 
   apiFormateFrom() {
-    const week = new Date();
+    const week = this.weekBack;
     week.setDate(week.getDate() - 7);
     const weekAgo = week.getFullYear() + "-" + (parseInt(week.getMonth() + 1) < 10 ? "0" + parseInt(week.getMonth() + 1) : parseInt(week.getMonth() + 1)) + "-" + week.getDate();
     return weekAgo;
