@@ -1,6 +1,5 @@
 export class TimeUtil {
   constructor(date, weekBack) {
-    // this.date = new Date();
     this.date = date;
     this.weekBack = weekBack;
   }
@@ -59,9 +58,9 @@ export class TimeUtil {
     return today;
   }
 
-  apiFormateFrom() {
+  apiFormateFrom(number) {
     const week = this.weekBack;
-    week.setDate(week.getDate() - 7);
+    week.setDate(week.getDate() - number);
     const weekAgo = week.getFullYear() + "-" + (parseInt(week.getMonth() + 1) < 10 ? "0" + parseInt(week.getMonth() + 1) : parseInt(week.getMonth() + 1)) + "-" + week.getDate();
     return weekAgo;
   }

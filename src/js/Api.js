@@ -7,7 +7,7 @@ export class Api {
   async getNews(words) {
     try {
       const res = await fetch(
-        `${this.apiUrl.url}q=${words}&from=${this.date.apiFormateFrom()}&to=${this.date.apiFormateTo()}&pageSize=100&sortBy=publishedAt&language=ru&apiKey=${this.apiUrl.api}`,
+        `${this.apiUrl.url}q=${words}&from=${this.date.apiFormateFrom(7)}&to=${this.date.apiFormateTo()}&pageSize=100&sortBy=publishedAt&language=ru&apiKey=${this.apiUrl.api}`,
         {
           method: "GET",
         }

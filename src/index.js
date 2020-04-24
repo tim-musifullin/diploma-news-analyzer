@@ -81,6 +81,7 @@ searchForm.addEventListener("submit", (event) => {
     .catch((err) => { // Обработка ошибки
       console.error(err);
       reset.dataError(); // Скрываем ненужные блоки, показываем ошибку
+      validate.searchInputNonBlock();
     });
   } else {
     validate.searchInputNonBlock();
