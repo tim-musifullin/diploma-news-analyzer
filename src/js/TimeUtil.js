@@ -54,14 +54,13 @@ export class TimeUtil {
     const today =
     this.date.getFullYear() + "-" + (parseInt(this.date.getMonth() + 1) < 10 ? "0" +
     parseInt(this.date.getMonth() + 1) : parseInt(this.date.getMonth() + 1)) + "-" + this.date.getDate();
-    console.log(today);
     return today;
   }
 
   apiFormateFrom(number) {
     const week = this.weekBack;
-    week.setDate(week.getDate() - number);
-    const weekAgo = week.getFullYear() + "-" + (parseInt(week.getMonth() + 1) < 10 ? "0" + parseInt(week.getMonth() + 1) : parseInt(week.getMonth() + 1)) + "-" + week.getDate();
+    week.setDate(week.getDate());
+    const weekAgo = week.getFullYear() + "-" + (parseInt(week.getMonth() + 1) < 10 ? "0" + parseInt(week.getMonth() + 1) : parseInt(week.getMonth() + 1)) + "-" + (week.getDate() - number);
     return weekAgo;
   }
 }
