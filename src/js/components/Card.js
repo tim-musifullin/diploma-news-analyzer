@@ -1,7 +1,7 @@
 export class Card {
   createCard(image, date, title, description, source, url) {
     if (image === null) {
-      image = "src/images/default.jpg";
+      image = "images/default.jpg";
     }
     image.naturalHeight;
     const template = `<a href="${url}" target="_blank" class="card">
