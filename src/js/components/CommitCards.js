@@ -1,4 +1,4 @@
-import { TimeUtil } from "../TimeUtil"
+import { TimeUtil } from "../utils/TimeUtil"
 
 export class CommitCard {
   constructor(container) {
@@ -76,6 +76,3 @@ export class CommitCard {
     }
   }
 }
-
-
-// "https://i.ibb.co/2NW6MZM/photo-2020-02-24-17-15-34.jpg"

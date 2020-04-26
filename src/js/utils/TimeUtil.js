@@ -19,7 +19,7 @@ export class TimeUtil {
         cardDate.push("марта");
         break;
       case "04":
-        cardDate.push("ареля");
+        cardDate.push("апреля");
         break;
       case "05":
         cardDate.push("мая");

@@ -2,14 +2,27 @@ import "./style.css";
 import "./about/about.css";
 import "./analytics/analytics.css";
 
-import { Api } from "./js/Api";
-import { Card } from "./js/Card";
-import { ResultCards } from "./js/ResultCards";
-import { TimeUtil } from "./js/TimeUtil";
-import { Vision } from "./js/Vision";
-import { Reset } from "./js/Reset"
+import { Api } from "./js/modules/Api";
+import { Card } from "./js/components/Card";
+import { ResultCards } from "./js/components/ResultCards";
+import { TimeUtil } from "./js/utils/TimeUtil";
+import { Vision } from "./js/utils/Vision";
+import { Reset } from "./js/utils/Reset"
 import { ValidateSearch } from "./js/components/ValidateSearch"
+import {
+  resultsSeaction,
+  resultsCard,
+  notFound,
+  preloader,
+  moreNews,
+  serverError,
+  searchForm,
+  sumLoadCards,
+  apiUrl,
+  SUM_CARDS_AT_TIME} from "./js/constants/constants";
 
+
+// Выделение input при вводе слова
 const field = document.querySelector(".search__field");
 document.addEventListener("click", function () {
   if (event.target.classList.value === "search__input") {
@@ -19,21 +32,7 @@ document.addEventListener("click", function () {
   }
 });
 
-
-const resultsSeaction = document.querySelector(".results");
-const resultsCard = document.querySelector(".results__cards");
-const notFound = document.querySelector(".not-found");
-const preloader = document.querySelector(".preloader");
-const moreNews = document.querySelector(".results__button");
-const serverError = document.querySelector(".error-server");
-const searchForm = document.forms.field;
-const sumLoadCards = document.querySelector(".results__cards").children.length;
-const apiUrl = {
-  "api": "636f55c68e584f72b302fe4050ffb444",
-  "url": "https://newsapi.org/v2/everything?"
-}
-const SUM_CARDS_AT_TIME = 3;
-
+// Обьявление классов
 const day = new Date();
 const weekBack = new Date();
 const vision = new Vision();
