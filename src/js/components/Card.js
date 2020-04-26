@@ -1,11 +1,12 @@
 export class Card {
   createCard(image, date, title, description, source, url) {
+    let style;
     if (image === null) {
-      image = "images/default.jpg";
+      image = "";
+      style = "style: backgroundColor: #fff";
     }
-    image.naturalHeight;
     const template = `<a href="${url}" target="_blank" class="card">
-                <img src="${image}" alt="Обложка новости" class="card__image">
+                <img src="${image}" class="card__image" ${style}>
                 <p class="card__date">${date}</p>
                 <div class="card__content">
                     <h4 class="card__title">${title}</h4>
