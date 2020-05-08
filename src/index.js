@@ -2,9 +2,9 @@ import "./style.css";
 import "./about/about.css";
 import "./analytics/analytics.css";
 
-import { Api } from "./js/modules/Api";
-import { Card } from "./js/components/Card";
-import { ResultCards } from "./js/components/ResultCards";
+import { NewsApi } from "./js/modules/NewsApi";
+import { NewsCard } from "./js/components/NewsCard";
+import { NewsResult } from "./js/components/NewsResult";
 import { TimeUtil } from "./js/utils/TimeUtil";
 import { Vision } from "./js/utils/Vision";
 import { Reset } from "./js/utils/Reset"
@@ -36,9 +36,9 @@ document.addEventListener("click", function () {
 const day = new Date();
 const weekBack = new Date();
 const vision = new Vision();
-const card = new Card();
+const card = new NewsCard();
 const date = new TimeUtil(day, weekBack);
-const resultCards = new ResultCards(
+const resultCards = new NewsResult(
   resultsCard,
   card,
   date,
@@ -51,7 +51,7 @@ const reset = new Reset(
   preloader,
   resultsCard,
   vision);
-const mainApi = new Api(apiUrl, date);
+const mainApi = new NewsApi(apiUrl, date);
 const validate = new ValidateSearch();
 
 /* Блок слушателя для кнопки "Искать"*/

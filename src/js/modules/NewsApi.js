@@ -1,4 +1,4 @@
-export class Api {
+export class NewsApi {
   constructor(apiUrl, date) {
     this.apiUrl = apiUrl;
     this.date = date;

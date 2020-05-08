@@ -1,4 +1,4 @@
-export class ResultCards {
+export class NewsResult {
   constructor(container, card, formateDate, SUM_CARDS_AT_TIME) {
     this.container = container;
     this.card = card;

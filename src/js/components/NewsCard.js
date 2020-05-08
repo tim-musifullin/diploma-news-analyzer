@@ -1,4 +1,4 @@
-export class Card {
+export class NewsCard {
   createCard(image, date, title, description, source, url) {
     let style;
     if (image === null) {
