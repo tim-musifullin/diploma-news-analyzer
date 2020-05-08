@@ -1,18 +1,21 @@
-@import url('./__content/card__content.css');
-@import url('./__date/card__date.css');
-@import url('./__description/card__description.css');
-@import url('./__image/card__image.css');
-@import url('./__source/card__source.css');
-@import url('./__title/card__title.css');
+@import url("./__content/card__content.css");
+@import url("./__date/card__date.css");
+@import url("./__description/card__description.css");
+@import url("./__image/card__image.css");
+@import url("./__source/card__source.css");
+@import url("./__title/card__title.css");
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: #fff;
-    border-radius: 20px;
-    position: relative;
-    transition: transform .4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #fff;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.4s;
+  text-decoration: none;
+  max-height: 576px;
+  height: 100%;
 }
 
 .card:hover {
@@ -22,5 +25,5 @@
   -webkit-transform: scale(1.01);
   -ms-transform: scale(1.01);
   transform: scale(1.01);
-  transition: transform .4s;
+  transition: transform 0.4s;
 }

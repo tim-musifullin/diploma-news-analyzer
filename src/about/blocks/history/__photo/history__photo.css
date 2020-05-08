@@ -1,6 +1,7 @@
 .history__photo {
     width: 64px;
     height: 64px;
+    border-radius: 50px;
 }
 
 @media (max-width: 460px) {

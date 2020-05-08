@@ -53,10 +53,18 @@
     margin-bottom: 80px;
 }
 
-.request__number_bold {
+.request__number-news_bold {
     font-family: Roboto;
     font-style: bold;
     font-weight: bold;
     font-size: 18px;
     line-height: 133%;
+}
+
+.request__number-mention_bold {
+  font-family: Roboto;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 133%;
 }

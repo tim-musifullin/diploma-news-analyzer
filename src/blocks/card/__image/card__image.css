@@ -1,12 +1,19 @@
 .card__image {
-    width: 100%;
-    padding-bottom: 24px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  min-height: 272px;
+  width: 100%;
+  object-fit: fill;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 @media (max-width: 990px) {
-    .card__image {
-        padding-bottom: 16px;
-    }
+  .card__image {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 680px) {
+  .card__image {
+    min-height: 196px;
+  }
 }
