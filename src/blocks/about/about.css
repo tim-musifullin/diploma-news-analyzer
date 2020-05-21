@@ -2,6 +2,7 @@
 @import url('./__info/about__info.css');
 @import url('./__photo/about__photo.css');
 @import url('./__title/about__title.css');
+@import url('./__sentence/about__sentence.css');
 
 .about {
     display: flex;
