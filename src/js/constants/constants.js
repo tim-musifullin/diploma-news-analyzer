@@ -9,6 +9,7 @@ export const searchForm = document.forms.field;
 export const sumLoadCards = document.querySelector(".results__cards").children.length;
 export const apiUrl = {
   "api": "84d6f066d2d641bf8eb61c03beb4b074",
-  "url": "https://newsapi.org/v2/everything?"
+  "url": "https://praktikum.tk/news/v2/everything?"
+  // https://newsapi.org/v2/everything?
 }
 export const SUM_CARDS_AT_TIME = 3;
