@@ -14,7 +14,6 @@ export class NewsApi {
       );
       if (!res.ok) return;
       const data = await res.json();
-      console.log(data);
       return data;
     } catch (error) {
       throw new Error(`Ошибка при запросе к серверу`);

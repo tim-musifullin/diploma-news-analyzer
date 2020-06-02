@@ -68,7 +68,6 @@ searchForm.addEventListener("submit", (event) => {
         reset.dataEmpty(); // Если данных нет, скрываем прелоудер и блок результатов, показываем ошибку
         validate.searchInputNonBlock();
       } else {
-        console.log(data);
         reset.dataComplete(); // Если данные есть, скрываем прелоудер, отображаем данные
         validate.searchInputNonBlock();
         localStorage.setItem("searchWord", JSON.stringify(searchWord)); // Добавляем введеное слово для аналитики
